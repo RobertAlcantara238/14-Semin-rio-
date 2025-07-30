@@ -521,7 +521,7 @@
     try {
       await addDoc(collection(db, "inscricoes"), dados);
       await updateDoc(doc(db, "oficinas", oficinaId), { vagas: oficinaData.vagas - 1 });
-      window.location.href = "Sucesso.html";
+      window.location.href = "sucesso.html";
       form.reset();
       await carregarOficinas();
     } catch (error) {
