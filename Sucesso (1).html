@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Confirmada - Seminário de Educação Infantil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .success-animation {
+            animation: successPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #10B981;
+            animation: confetti-fall 3s linear infinite;
+        }
+        
+        .confetti:nth-child(odd) {
+            background: #3B82F6;
+            animation-delay: 0.5s;
+        }
+        
+        .confetti:nth-child(3n) {
+            background: #F59E0B;
+            animation-delay: 1s;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4" style="background-color: #b61b54;">
+    <!-- Confetti Animation -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="confetti" style="left: 10%; animation-duration: 3s;"></div>
+        <div class="confetti" style="left: 20%; animation-duration: 2.5s;"></div>
+        <div class="confetti" style="left: 30%; animation-duration: 3.5s;"></div>
+        <div class="confetti" style="left: 40%; animation-duration: 2.8s;"></div>
+        <div class="confetti" style="left: 50%; animation-duration: 3.2s;"></div>
+        <div class="confetti" style="left: 60%; animation-duration: 2.7s;"></div>
+        <div class="confetti" style="left: 70%; animation-duration: 3.1s;"></div>
+        <div class="confetti" style="left: 80%; animation-duration: 2.9s;"></div>
+        <div class="confetti" style="left: 90%; animation-duration: 3.3s;"></div>
+    </div>
+
+    <div class="max-w-2xl w-full">
+        <!-- Success Card -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center fade-in">
+            <!-- Success Icon -->
+            <div class="success-animation mb-8">
+                <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Main Message -->
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 whitespace-nowrap">
+                Inscrição realizada com sucesso!
+            </h1>
+
+            <!-- Event Details -->
+            <div class="rounded-2xl p-6 mb-8 text-white" style="background-color: #0c8474;">
+                <p class="text-lg md:text-xl font-medium leading-relaxed">
+                    Esperamos você no <strong>14° Seminário de Educação Infantil do Vale do Paraíba</strong>
+                </p>
+            </div>
+
+
+
+
+
+            <!-- Footer Message -->
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <p class="text-gray-500 text-sm">
+                    Obrigado por se inscrever! Estamos ansiosos para este reencontro.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        function goToHomepage() {
+            // Simula redirecionamento para página inicial
+            alert('Redirecionando para a página inicial...');
+            // Em um site real, você usaria: window.location.href = '/';
+        }
+
+        // Adiciona mais confetes dinamicamente
+        function createConfetti() {
+            const colors = ['#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6'];
+            const confettiContainer = document.querySelector('.fixed.inset-0');
+            
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    confettiContainer.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 4000);
+                }, i * 200);
+            }
+        }
+
+        // Inicia animação de confetes
+        createConfetti();
+        setInterval(createConfetti, 3000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9633764975e3f1bd',t:'MTc1MzE5MjgwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
